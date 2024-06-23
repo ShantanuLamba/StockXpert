@@ -242,6 +242,6 @@ app.post('/sell', auth, async (req, res) => {
 
 
 // listen to the server
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
