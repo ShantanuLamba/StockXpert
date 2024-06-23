@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>StockXpert</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/Features-Image.css">
+    <link rel="stylesheet" href="../public/css/Navbar-Right-Links-Dark.css">
+    <link rel="stylesheet" href="../public/css/opstyle.css">
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+    <%- include('../partials/tickertape.ejs') %>
+        <div class="positions-page-container">
+            <div class="positions-container">
+                <h2>Your Open Positions</h2>
+                <div class="positions-list">
+
+                    <!-- Example Position Card -->
+                    <div class="positions-list">
+                        <% positions.forEach(function(position) { %>
+                            <div class="position-card" style="min-width: 300px;">
+                                <h3><%= position.stock_name %> </h3>
+                                <p>Shares: <%= position.stock_total %></p>
+                                <p>Purchase Price: $<%= position.avg_price.toFixed(2) %></p>
+                                <p>Current Price: $<%=position.currentPrice %></p>
+                                <p class="<%= (position.last_price - position.avg_price) >= 0 ? 'profit' : 'loss' %>">Profit/Loss: $<%= ((position.currentPrice - position.avg_price) * position.stock_quantity).toFixed(2) %></p>
+                                <form action="/sell" method="POST">
+                                    <div class="form-group">
+                                        <label for="amount">Amount to Sell:</label>
+                                        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+                                        <input type="hidden" name="positionId" value="<%= position._id %>">
+                                    </div>
+                                    <button type="submit" class="sell-btn">Sell</button>
+                                </form>
+                            </div>
+                        <% }); %>
+                    </div>
+                    <!-- Add more position cards as needed -->
+
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockXpert</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/stocks_styles.css">
+    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/Features-Image.css">
+    <link rel="stylesheet" href="/public/css/Navbar-Right-Links-Dark.css">
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+    <%- include('../partials/tickertape.ejs') %>
+        <div class="sub-navbar">
+            <div class="greeting">
+                <p>Hello, <%= username %> !</p>
+
+            </div>
+            <div class="logout">
+                <table>
+                    <tr>
+                      <td>Total Account Balance : $<%= token_balance %></td>
+                      <td><a href="/positions">Open Positions</a></td>
+                      <td><a href="/logout">Logout</a></td>
+                      
+                    </tr>
+                  </table>
+            </div>
+        </div>
+
+        <div class="stocks-page-container">
+            <div class="stocks-container">
+                <h2>Select Stocks to Trade</h2>
+                <div class="stocks-list">
+                    <div class="stock-item">
+                        <h3>Apple Inc. (AAPL)</h3>
+                        <p>Price: $145.00</p>
+                        <a href="/trade/AAPL" class="trade-btn">Buy</a>
+                    </div>
+                    <div class="stock-item">
+                        <h3>Microsoft Corp. (MSFT)</h3>
+                        <p>Price: $280.00</p>
+                        <a href="/trade/MSFT" class="trade-btn">Buy</a>
+                    </div>
+                    <div class="stock-item">
+                        <h3>Amazon.com Inc. (AMZN)</h3>
+                        <p>Price: $3,300.00</p>
+                        <a href="/trade/AMZN" class="trade-btn">Buy</a>
+                    </div>
+                    <div class="stock-item">
+                        <h3>Alphabet Inc. (GOOGL)</h3>
+                        <p>Price: $2,400.00</p>
+                        <a href="/trade/GOOGL" class="trade-btn">Buy</a>
+                    </div>
+                    <!-- Add more stock items as needed -->
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

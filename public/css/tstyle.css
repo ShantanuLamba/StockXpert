@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.trade-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  margin: 20px;
+}
+
+.trade-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.trade-container h2 {
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.trading-view-widget {
+  margin-bottom: 30px;
+}
+
+.trade-info p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.trade-info .form-group {
+  margin-bottom: 20px;
+}
+
+.trade-info .form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.trade-info .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.trade-action-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.trade-action-btn:hover {
+  background-color: #0056b3;
+}
